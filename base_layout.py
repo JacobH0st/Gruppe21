@@ -3,7 +3,7 @@ from tkinter import *
 
 
 def home(self):
-    self.title("Tourism marketplace")
+    self.title("Turisme marketsplass")
     self.geometry("500x500")
 
 class BaseLayout(tk.Tk):
