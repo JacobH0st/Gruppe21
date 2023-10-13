@@ -1,0 +1,70 @@
+[
+    {
+        "Bedrift": "VISNINGER AS",
+        "Dato og tid": "31.10.2023 18:00",
+        "Varighet": "2 timer",
+        "TLF": "+47 47 35 89 01",
+        "Adresse": "Hvalergata 4A, 1680 Hvaler",
+        "Pris": "200kr per person",
+        "Antall plasser": {
+            "Igjen": 50,
+            "Totalt": 100
+        },
+        "Aldersgrense": 13,
+        "Ute/Inne": "Ute",
+        "Rating": 3.7,
+        "Type": "Naturomvisning",
+        "Beskrivelse": "Kom å se på halloween spesialen ved flotte Hvaler."
+    },
+    {
+        "Turguide": "Hanne Nilsen",
+        "Dato og tid": "12.10.2023 16:00",
+        "Varighet": "1 time",
+        "TLF": "+47 69076621",
+        "Adresse": "Fjellveien 2, 6216 Geiranger",
+        "Pris": "100kr",
+        "Antall plasser": {
+            "Igjen": 5,
+            "Totalt": 15
+        },
+        "Aldersgrense": "18+",
+        "Ute/Inne": "Ute",
+        "Rating": 2.4,
+        "Type": "Naturomvisning",
+        "Beskrivelse": "Kom å bli med på en fjelltur, her får du sett masse fin natur"
+    },
+    {
+        "Museum": "Norske Jernbanemuseum",
+        "Dato og tid": "17.11.2023 12:00",
+        "Varighet": "1,5 timer",
+        "TLF": "+47 40 44 88 80",
+        "Adresse": "Strandvegen 161, 2316 Hamar",
+        "Pris": "200kr for voksne, 100kr for barn",
+        "Antall plasser": {
+            "Igjen": 10,
+            "Totalt": 50
+        },
+        "Aldersgrense": "Alle aldre",
+        "Ute/Inne": "Begge",
+        "Rating": 4.9,
+        "Type": "Historisk omvisning",
+        "Beskrivelse": "Norges jernbanehistorie"
+    },
+    {
+        "Organisasjon": "Norske Flygerorganisasjonen",
+        "Dato og tid": "20.11.2023 10:00",
+        "Varighet": "4 timer",
+        "TLF": "+47 97152632",
+        "Adresse": "Gardermovegen 1, 2030 Nannestad",
+        "Pris": "500kr",
+        "Antall plasser": {
+            "Igjen": 20,
+            "Totalt": 25
+        },
+        "Aldersgrense": "Alle aldre",
+        "Ute/Inne": "Inne",
+        "Rating": 1.7,
+        "Type": "Historisk omvisning",
+        "Beskrivelse": "Norges Flyhistorie"
+    }
+]
