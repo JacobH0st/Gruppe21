@@ -1,3 +1,5 @@
+#python -m unittest test_baselayout.py
+
 import sys
 sys.path.append("..")
 import unittest
