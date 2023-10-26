@@ -14,10 +14,10 @@
         "Outdoor/Indoor": "Ute",
         "Rating": 3.7,
         "Type": "Naturomvisning",
-        "Description": "Kom \u00c3\u00a5 se p\u00c3\u00a5 halloween spesialen ved flotte Hvaler."
+        "Description": "Kom \u00e5 se p\u00e5 halloween spesialen ved flotte Hvaler."
     },
     {
-        "Tour Guide": "Hanne Nilsen",
+        "Company": "Hanne Nilsen",
         "Date and Time": "12.10.2023 16:00",
         "Duration": "1 time",
         "Phone": "+47 69076621",
@@ -31,12 +31,12 @@
         "Outdoor/Indoor": "Ute",
         "Rating": 2.4,
         "Type": "Naturomvisning",
-        "Description": "Kom \u00c3\u00a5 bli med p\u00c3\u00a5 en fjelltur, her f\u00c3\u00a5r du sett masse fin natur"
+        "Description": "Kom \u00e5 bli med p\u00e5 en fjelltur, her f\u00e5r du sett masse fin natur"
     },
     {
-        "Museum": "Norske Jernbanemuseum",
+        "Company": "Norske Jernbanemuseum",
         "Date and Time": "17.11.2023 12:00",
-        "Duration": "1,5 timer",
+        "Duration": "1,5 time",
         "Phone": "+47 40 44 88 80",
         "Address": "Strandvegen 161, 2316 Hamar",
         "Price": "200kr for voksne, 100kr for barn",
@@ -51,7 +51,7 @@
         "Description": "Norges jernbanehistorie"
     },
     {
-        "Organization": "Norske Flygerorganisasjonen",
+        "Company": "Norske Flygerorganisasjonen",
         "Date and Time": "20.11.2023 10:00",
         "Duration": "4 timer",
         "Phone": "+47 97152632",

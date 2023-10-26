@@ -6,6 +6,7 @@ def create_data_entry_form():
     window = tk.Tk()
     window.title("Data Form")
     
+    
     company_entry = tk.Entry(window)
     datetime_entry = tk.Entry(window)
     duration_entry = tk.Entry(window)
