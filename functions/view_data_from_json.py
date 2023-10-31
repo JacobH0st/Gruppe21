@@ -3,7 +3,6 @@ from tkinter import *
 from tkinter import ttk
 import json
 
-# Load your JSON data
 with open('json_files/data.json', 'r') as f:
     tours_data = json.load(f)
 
@@ -14,14 +13,13 @@ def view_data_from_json(self):
     self.geometry("1920x1080")
     self.title('Marketplace')
 
-    columns = ('id', 'Company', 'Date and Time', 'Duration', 'Phone', 'Address', 'Price', 'Available Seats', 'Age Limit', 'Outdoor/Indoor', 'Rating', 'Type', 'Description')
+    columns = ('ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted', 'Rating', 'Type')
 
     tree = ttk.Treeview(self, columns=columns, show='headings')
 
-    # Add headings and set column widths
     for column in columns:
         tree.heading(column, text=column)
-        tree.column(column, width=100)
+        tree.column(column, width=115)
 
     tours = []
     for i, tour_data in enumerate(tours_data, start=1):
@@ -88,11 +86,20 @@ def view_data_from_json(self):
 
     tree.grid(row=0, column=0, sticky='nsew')
 
-    # Add a scrollbar to the Treeview
-    scrollbar_treeview = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
+    # SCROLLBAR
+    scrollbar_treeview = Scrollbar(self, orient=VERTICAL, command=tree.yview)
     tree.configure(yscroll=scrollbar_treeview.set)
     scrollbar_treeview.grid(row=0, column=1, sticky='ns')
 
-    scrollbar_listbox = tk.Scrollbar(self, orient=tk.VERTICAL, command=listbox.yview)
+    scrollbar_listbox = Scrollbar(self, orient=VERTICAL, command=listbox.yview)
     listbox.config(yscroll=scrollbar_listbox.set)
     scrollbar_listbox.grid(row=0, column=4, sticky='ns')
+    
+    # TODO FIKS BACK KNAPP
+    back_button = Button(self, text="Back", command={})
+    back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
+    
+    # TODO FIKS BESTILL LOGIKK, OPPDATERE ANTALL PLASSER
+    
+    reserve_button = Button(self, text="Bestill", command={})
+    reserve_button.grid(row=15, column=2, columnspan=1, padx=10, pady=10)

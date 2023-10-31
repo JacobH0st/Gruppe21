@@ -8,7 +8,7 @@ def create_data_entry_form(self):
     for thingy in self.grid_slaves():
         thingy.grid_forget()
     
-    self.geometry('300x425')
+    self.geometry('300x500')
     self.title("Data Form")
     
     
@@ -68,3 +68,7 @@ def create_data_entry_form(self):
         description_entry
         ))
     add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
+    
+    # TODO FIKS BACK KNAPP
+    back_button = Button(self, text="Back", command={})
+    back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
