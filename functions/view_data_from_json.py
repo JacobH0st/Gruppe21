@@ -1,52 +1,98 @@
 import tkinter as tk
+from tkinter import *
 from tkinter import ttk
-from tkinter.messagebox import showinfo
 import json
 
-def view_data_from_json():
-    window = tk.Toplevel()
-    window.title('Marketplace')
-    
+# Load your JSON data
+with open('json_files/data.json', 'r') as f:
+    tours_data = json.load(f)
 
-    columns = (
-        'Company', 'Date and Time', 'Duration', 'Phone', 'Address', 'Price',
-        'Remaining Seats', 'Age Limit', 'Outdoor/Indoor', 'Rating', 'Type', 'Description'
-    )
+def view_data_from_json(self):
+    for thingy in self.grid_slaves():
+        thingy.grid_forget()
 
-    tree = ttk.Treeview(window, columns=columns, show='headings')
+    self.geometry("1920x1080")
+    self.title('Marketplace')
 
-    for col in columns:
-        tree.heading(col, text=col)
-        tree.column(col, width=100)
+    columns = ('id', 'Company', 'Date and Time', 'Duration', 'Phone', 'Address', 'Price', 'Available Seats', 'Age Limit', 'Outdoor/Indoor', 'Rating', 'Type', 'Description')
 
-    with open('json_files/data.json', 'r') as file:
-        data = json.load(file)
+    tree = ttk.Treeview(self, columns=columns, show='headings')
 
-    for item in data:
-        company = item.get('Company', '')
-        datetime = item.get('Date and Time', '')
-        duration = item.get('Duration', '')
-        phone = item.get('Phone', '')
-        address = item.get('Address', '')
-        price = item.get('Price', '')
-        remaining_seats = item.get('Available Seats', {}).get('Remaining', '')
-        age_limit = item.get('Age Limit', '')
-        outdoor_indoor = item.get('Outdoor/Indoor', '')
-        rating = item.get('Rating', '')
-        type = item.get('Type', '')
-        description = item.get('Description', '')
+    # Add headings and set column widths
+    for column in columns:
+        tree.heading(column, text=column)
+        tree.column(column, width=100)
 
-        tree.insert('', tk.END, values=(
-            company, datetime, duration, phone, address, price,
-            remaining_seats, age_limit, outdoor_indoor, rating, type, description
-        ))
+    tours = []
+    for i, tour_data in enumerate(tours_data, start=1):
+        id = i
+        company = tour_data['Company']
+        date = tour_data['Date and Time']
+        duration = tour_data['Duration']
+        phone = tour_data['Phone']
+        address = tour_data['Address']
+        price = tour_data['Price']
+        remaining_seats = tour_data['Available Seats']['Remaining']
+        total_seats = tour_data['Available Seats']['Total']
+        age_limit = tour_data['Age Limit']
+        place = tour_data['Outdoor/Indoor']
+        rating = tour_data['Rating']
+        category = tour_data['Type']
+        description = tour_data['Description']
 
-    tree.pack(fill='both', expand=True)
+        tours.append((id, company, date, duration, phone, address, price, f"{remaining_seats}/{total_seats}", age_limit, place, rating, category, description))
+
+    # Add data to the Treeview
+    for tour in tours:
+        tree.insert('', tk.END, values=tour)
+
+    listbox = Listbox(self, height=15, width=55, bg="white", activestyle='dotbox', font="Helvetica", fg="black")
+    listbox.grid(row=0, column=2)
 
     def item_selected(event):
-        selected_item = tree.selection()[0]
-        item = tree.item(selected_item)
-        record = item['values']
-        showinfo(title='Information', message='\n'.join(f'{columns[i]}: {record[i]}' for i in range(len(columns))))
+        for selected_item in tree.selection():
+            listbox.delete(0, END)
+            item = tree.item(selected_item)
+
+            jsonIndex = item['values'][0] - 1
+            company = "Hvem: " + tours_data[jsonIndex]['Company']
+            date = "Tidspunkt: " + tours_data[jsonIndex]['Date and Time']
+            duration = "Varighet: " + tours_data[jsonIndex]['Duration']
+            phone = "Tlf nr: " + str(tours_data[jsonIndex]['Phone'])
+            address = "Addresse: " + tours_data[jsonIndex]['Address']
+            price = "Pris: " + str(tours_data[jsonIndex]['Price'])
+            remaining_seats = "Ledige seter: " + str(tours_data[jsonIndex]['Available Seats']['Remaining'])
+            total_seats = "Antall seter: " + str(tours_data[jsonIndex]['Available Seats']['Total'])
+            age_limit = "Aldersgrense: " + str(tours_data[jsonIndex]['Age Limit'])
+            place = "Sted: " + tours_data[jsonIndex]['Outdoor/Indoor']
+            rating = "Rating: " + str(tours_data[jsonIndex]['Rating'])
+            category = "Type: " + tours_data[jsonIndex]['Type']
+            description = "Beskrivelse: " + tours_data[jsonIndex]['Description']
+
+            listbox.insert(END, company)
+            listbox.insert(END, date)
+            listbox.insert(END, duration)
+            listbox.insert(END, phone)
+            listbox.insert(END, address)
+            listbox.insert(END, price)
+            listbox.insert(END, remaining_seats)
+            listbox.insert(END, total_seats)
+            listbox.insert(END, age_limit)
+            listbox.insert(END, place)
+            listbox.insert(END, rating)
+            listbox.insert(END, category)
+            listbox.insert(END, description)
+
 
     tree.bind('<<TreeviewSelect>>', item_selected)
+
+    tree.grid(row=0, column=0, sticky='nsew')
+
+    # Add a scrollbar to the Treeview
+    scrollbar_treeview = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
+    tree.configure(yscroll=scrollbar_treeview.set)
+    scrollbar_treeview.grid(row=0, column=1, sticky='ns')
+
+    scrollbar_listbox = tk.Scrollbar(self, orient=tk.VERTICAL, command=listbox.yview)
+    listbox.config(yscroll=scrollbar_listbox.set)
+    scrollbar_listbox.grid(row=0, column=4, sticky='ns')

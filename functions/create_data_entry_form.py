@@ -1,25 +1,30 @@
-import tkinter as tk
+from tkinter import *
+import json
 
 from functions.add_data_to_json import add_data_to_json
 
-def create_data_entry_form():    
-    window = tk.Tk()
-    window.title("Data Form")
+def create_data_entry_form(self):    
+    
+    for thingy in self.grid_slaves():
+        thingy.grid_forget()
+    
+    self.geometry('300x425')
+    self.title("Data Form")
     
     
-    company_entry = tk.Entry(window)
-    datetime_entry = tk.Entry(window)
-    duration_entry = tk.Entry(window)
-    phone_entry = tk.Entry(window)
-    address_entry = tk.Entry(window)
-    price_entry = tk.Entry(window)
-    remaining_seats_entry = tk.Entry(window)
-    total_seats_entry = tk.Entry(window)
-    age_limit_entry = tk.Entry(window)
-    outdoor_indoor_entry = tk.Entry(window)
-    rating_entry = tk.Entry(window)
-    type_entry = tk.Entry(window)
-    description_entry = tk.Entry(window)
+    company_entry = Entry(self)
+    datetime_entry = Entry(self)
+    duration_entry = Entry(self)
+    phone_entry = Entry(self)
+    address_entry = Entry(self)
+    price_entry = Entry(self)
+    remaining_seats_entry = Entry(self)
+    total_seats_entry = Entry(self)
+    age_limit_entry = Entry(self)
+    outdoor_indoor_entry = Entry(self)
+    rating_entry = Entry(self)
+    type_entry = Entry(self)
+    description_entry = Entry(self)
     
     fields = [
         ("Company", 0, company_entry),
@@ -38,7 +43,7 @@ def create_data_entry_form():
     ]
     
     for field, row, entry_widget in fields:
-        label = tk.Label(window, text=field)
+        label = Label(self, text=field)
         label.grid(row=row, column=0, padx=10, pady=5)
         entry_widget.grid(row=row, column=1, padx=10, pady=5) 
     
@@ -47,7 +52,7 @@ def create_data_entry_form():
         elif field == "Rating":
             entry_widget.insert(0, "0.0")
             
-    add_button = tk.Button(window, text="Add Data", command=lambda: add_data_to_json(
+    add_button = Button(self, text="Add Data", command=lambda: add_data_to_json(
         company_entry, 
         datetime_entry, 
         duration_entry, 
@@ -63,5 +68,3 @@ def create_data_entry_form():
         description_entry
         ))
     add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
-    
-    window.mainloop()

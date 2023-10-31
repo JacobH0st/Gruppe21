@@ -1,8 +1,7 @@
 import tkinter as tk
 from tkinter import *
-from functions.create_data_entry_form import create_data_entry_form
-from functions.login_window import LoginWindow
-from functions.view_data_from_json import view_data_from_json
+import functions.view_data_from_json
+import functions.create_data_entry_form
 
 class LoginWindow(tk.Toplevel):
     def __init__(self, base_layout):
@@ -45,13 +44,13 @@ class BaseLayout(tk.Tk):
         self.geometry("500x500")
 
         if self.mode == "guide":
-            add_button = tk.Button(self, text="Forms", command=create_data_entry_form)
+            add_button = Button(self, text="Forms", command=lambda: functions.create_data_entry_form.create_data_entry_form)
             add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
-            view_button = tk.Button(self, text="Marketplace", command=view_data_from_json)
-            view_button.grid(row=14, column=0, columnspan=2, padx=10, pady=10)
-        elif self.mode == "user":
-            view_button = tk.Button(self, text="Marketplace", command=view_data_from_json)
-            view_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
+        elif self.mode == "user" or self.mode is None:
+            pass  # Adjust this as needed for user mode
+
+        view_button = Button(self, text="Marketplace", command=lambda: functions.view_data_from_json.view_data_from_json(self))
+        view_button.grid(row=14, column=0, columnspan=2, padx=10, pady=10)
 
     def switch_mode(self, new_mode):
         self.mode = new_mode
