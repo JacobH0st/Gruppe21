@@ -6,16 +6,15 @@ import json
 with open('json_files/data.json', 'r') as f:
     tours_data = json.load(f)
 
-def view_data_from_json(self):
-    for thingy in self.grid_slaves():
+def view_data_from_json(app, frame):
+    frame.pack()
+    
+    for thingy in frame.grid_slaves():
         thingy.grid_forget()
-
-    self.geometry("1920x1080")
-    self.title('Marketplace')
 
     columns = ('ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted', 'Rating', 'Type')
 
-    tree = ttk.Treeview(self, columns=columns, show='headings')
+    tree = ttk.Treeview(frame, columns=columns, show='headings')
 
     for column in columns:
         tree.heading(column, text=column)
@@ -44,7 +43,7 @@ def view_data_from_json(self):
     for tour in tours:
         tree.insert('', tk.END, values=tour)
 
-    listbox = Listbox(self, height=15, width=55, bg="white", activestyle='dotbox', font="Helvetica", fg="black")
+    listbox = Listbox(frame, height=15, width=55, bg="white", activestyle='dotbox', font="Helvetica", fg="black")
     listbox.grid(row=0, column=2)
 
     def item_selected(event):
@@ -87,19 +86,19 @@ def view_data_from_json(self):
     tree.grid(row=0, column=0, sticky='nsew')
 
     # SCROLLBAR
-    scrollbar_treeview = Scrollbar(self, orient=VERTICAL, command=tree.yview)
+    scrollbar_treeview = Scrollbar(frame, orient=VERTICAL, command=tree.yview)
     tree.configure(yscroll=scrollbar_treeview.set)
     scrollbar_treeview.grid(row=0, column=1, sticky='ns')
 
-    scrollbar_listbox = Scrollbar(self, orient=VERTICAL, command=listbox.yview)
+    scrollbar_listbox = Scrollbar(frame, orient=VERTICAL, command=listbox.yview)
     listbox.config(yscroll=scrollbar_listbox.set)
     scrollbar_listbox.grid(row=0, column=4, sticky='ns')
     
     # TODO FIKS BACK KNAPP
-    back_button = Button(self, text="Back", command={})
+    back_button = tk.Button(frame, text="Tilbake", command=app.switch_to_main_frame)
     back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
     
     # TODO FIKS BESTILL LOGIKK, OPPDATERE ANTALL PLASSER
     
-    reserve_button = Button(self, text="Bestill", command={})
+    reserve_button = Button(frame, text="Bestill", command={})
     reserve_button.grid(row=15, column=2, columnspan=1, padx=10, pady=10)
