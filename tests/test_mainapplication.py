@@ -1,15 +1,16 @@
 #python -m unittest test_baselayout.py
 
 import sys
+
+from main_application import MainApplication
 sys.path.append("..")
 import unittest
 import tkinter as tk
-from base_layout import BaseLayout, home
 
-class TestBaseLayout(unittest.TestCase):
+class TestMainApplication(unittest.TestCase):
     
     def setUp(self):
-        self.app = BaseLayout()
+        self.app = MainApplication()
 
     def tearDown(self):
         self.app.destroy()

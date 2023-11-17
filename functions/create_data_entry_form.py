@@ -1,10 +1,9 @@
 from tkinter import *
-import json
 
 from functions.add_data_to_json import add_data_to_json
 
 def create_data_entry_form(app, frame):    
-    
+
     for widget in frame.grid_slaves():
         widget.grid_forget()
     
