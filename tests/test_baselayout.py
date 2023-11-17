@@ -22,7 +22,7 @@ class TestBaseLayout(unittest.TestCase):
     def test_geometry_size_is_correct(self):
         self.app.update()
         size = self.app.geometry().split('+')[0]
-        self.assertEqual(size, "500x500")
+        self.assertEqual(size, "700x500")
 
 if __name__ == "__main__":
     unittest.main()

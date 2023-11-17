@@ -94,7 +94,6 @@ def view_data_from_json(app, frame):
     listbox.config(yscroll=scrollbar_listbox.set)
     scrollbar_listbox.grid(row=0, column=4, sticky='ns')
     
-    # TODO FIKS BACK KNAPP
     back_button = tk.Button(frame, text="Tilbake", command=app.switch_to_main_frame)
     back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
     

@@ -7,6 +7,7 @@ class MainApplication(tk.Tk):
         super().__init__()
         self.title("Turisme Markedsplass")
         self.geometry("700x500")
+        self.chosenMode = None
 
         self.main_frame = tk.Frame(self)
         self.data_entry_frame = tk.Frame(self)
@@ -20,10 +21,12 @@ class MainApplication(tk.Tk):
         self.geometry("700x500")
         mode_label = tk.Label(self.main_frame, text="Velg modus:")
         mode_label.pack(pady=10)
-
+        
         for mode in ["User", "Guide", "Admin"]:
             button = tk.Button(self.main_frame, text=f"{mode} Modus", command=lambda m=mode: self.show_buttons(m))
             button.pack(pady=5)
+            
+        #self.setLoginMode()   
             
     def open_data_entry_form(self):
         self.main_frame.pack_forget()
@@ -50,9 +53,17 @@ class MainApplication(tk.Tk):
         self.clear_frame(self.main_frame)
         label = tk.Label(self.main_frame, text=f"{mode} Modus")
         label.pack(pady=10)
-
+        
+        
         add_button = tk.Button(self.main_frame, text="Legg til guide", command=lambda: self.open_data_entry_form())
         add_button.pack(pady=5)
+        
+        if mode == "User":
+            add_button.destroy() 
+            
+        if mode == "Admin":
+            delete_button = tk.Button(self.main_frame, text="Slett guides", command=lambda: self.open_view_json_frame())
+            delete_button.pack(pady=5)
 
         view_button = tk.Button(self.main_frame, text="Markedsplass", command=lambda: self.open_view_json_frame())
         view_button.pack(pady=5)

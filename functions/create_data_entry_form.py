@@ -64,7 +64,6 @@ def create_data_entry_form(app, frame):
         description_entry
         ))
     add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
-    
-    # TODO FIKS BACK KNAPP
+
     back_button = Button(frame, text="Back", command=app.switch_to_main_frame)
     back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
