@@ -1,8 +1,10 @@
 from tkinter import *
 
 from functions.add_data_to_json import add_data_to_json
+from main_application import MainApplication
 
-def create_data_entry_form(app, frame):    
+def create_data_entry_form(app, frame):   
+    app = MainApplication
 
     for widget in frame.grid_slaves():
         widget.grid_forget()
@@ -64,5 +66,5 @@ def create_data_entry_form(app, frame):
         ))
     add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
 
-    back_button = Button(frame, text="Back", command=app.switch_to_main_frame)
+    back_button = Button(frame, text="Back", command=lambda: app.switch_to_main_frame())
     back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)

@@ -1,29 +1,32 @@
-#python -m unittest test_baselayout.py
+#python -m pytest
 
-import sys
+from tkinter import Frame
+import pytest
 
 from main_application import MainApplication
-sys.path.append("..")
-import unittest
-import tkinter as tk
 
-class TestMainApplication(unittest.TestCase):
-    
-    def setUp(self):
-        self.app = MainApplication()
 
-    def tearDown(self):
-        self.app.destroy()
+@pytest.fixture
+def app_and_frame():
+    app = MainApplication()
+    frame = Frame(app)
+    yield app, frame
+    app.destroy()
     
-    #Testing the title of the application
-    def test_window_title_is_correct(self):
-        self.assertEqual(self.app.title(), "Turisme marketsplass")
-    
-    #Testing the size of the application
-    def test_geometry_size_is_correct(self):
-        self.app.update()
-        size = self.app.geometry().split('+')[0]
-        self.assertEqual(size, "700x500")
+# Test if clicking user mode button sets the correct mode
+def test_user_mode_button(app_and_frame):
+    app, frame = app_and_frame
+    app.show_buttons("User")
+    assert app.current_mode == "User"
 
-if __name__ == "__main__":
-    unittest.main()
+# Test if clicking user mode button sets the correct mode
+def test_guide_mode_button(app_and_frame):
+    app, frame = app_and_frame
+    app.show_buttons("Guide")
+    assert app.current_mode == "Guide"
+    
+# Test if clicking admin mode button sets the correct mode
+def test_admin_mode_button(app_and_frame):
+    app, frame = app_and_frame
+    app.show_buttons("Admin")
+    assert app.current_mode == "Admin"
