@@ -1,5 +1,5 @@
 import tkinter as tk
-from functions import AdminMarketplace, GuideMarketplace, UserMarketplace
+from functions import AdminMarketplace, GuideMarketplace, UserMarketplace, CreateDataEntryFormBase
 from ui_components import AdminLayout, GuideLayout, UserLayout
 
 class MainApplication(tk.Tk):
@@ -44,7 +44,14 @@ class MainApplication(tk.Tk):
         self.geometry("1920x1080")
         self.current_marketplace = marketplace_class(self, self.marketeplace_frame)
         self.current_marketplace.frame.pack()
-    
+        
+    def show_data_entry_form(self, create_data_entry_form_class):
+        self.main_frame.pack_forget()
+        self.geometry("1920x1080")
+        self.entry_form = create_data_entry_form_class(self, self.data_entry_frame)
+        self.entry_form.frame.pack()
+
+
     def show_user_marketplace(self):
         self.show_marketplace(UserMarketplace)
         
@@ -53,6 +60,9 @@ class MainApplication(tk.Tk):
 
     def show_admin_marketplace(self):
         self.show_marketplace(AdminMarketplace)
+    
+    def show_create_data_entry_form(self):
+        self.show_data_entry_form(CreateDataEntryFormBase)
         
     def clear_frame(self, frame):
         for widget in frame.winfo_children():

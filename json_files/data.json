@@ -66,5 +66,22 @@
         "Rating": 1.7,
         "Type": "Historisk omvisning",
         "Description": "Norges Flyhistorie"
+    },
+    {
+        "Company": "s",
+        "Date and Time": "s",
+        "Duration": "s",
+        "Phone": "s",
+        "Address": "s",
+        "Price": "s",
+        "Available Seats": {
+            "Remaining": "0",
+            "Total": "0"
+        },
+        "Age Limit": "s",
+        "Outdoor/Indoor": "s",
+        "Rating": "0.0",
+        "Type": "s",
+        "Description": "s"
     }
 ]
