@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from functions import MarketplaceBase
 
 class UserMarketplace(MarketplaceBase):
@@ -10,4 +11,4 @@ class UserMarketplace(MarketplaceBase):
     
     def reserve(self):
         #TODO: legg til reservasjon oppdateringer, f.eks. antall ledige plasser oppdateres og legg til en knapp for avbestilling.
-        pass
+        messagebox.showinfo("Kommer", "Ikke implementert enda")

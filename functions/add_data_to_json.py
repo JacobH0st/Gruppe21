@@ -1,4 +1,5 @@
 import json
+from tkinter import END
 
 def add_data_to_json(company_entry, 
                      datetime_entry, 
@@ -44,3 +45,17 @@ def add_data_to_json(company_entry,
         json.dump(existing_json_data, file, indent=4)
     
     print("Data added to the JSON file.")
+    
+    company_entry.delete(0, END)
+    datetime_entry.delete(0, END)
+    duration_entry.delete(0, END)
+    phone_entry.delete(0, END)
+    address_entry.delete(0, END)
+    price_entry.delete(0, END)
+    remaining_seats_entry.delete(0, END)
+    total_seats_entry.delete(0, END)
+    age_limit_entry.delete(0, END)
+    outdoor_indoor_entry.delete(0, END)
+    rating_entry.delete(0, END)
+    type_entry.delete(0, END)
+    description_entry.delete(0, END)

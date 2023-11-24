@@ -47,7 +47,7 @@ class MainApplication(tk.Tk):
         
     def show_data_entry_form(self, create_data_entry_form_class):
         self.main_frame.pack_forget()
-        self.geometry("1920x1080")
+        self.geometry("700x500")
         self.entry_form = create_data_entry_form_class(self, self.data_entry_frame)
         self.entry_form.frame.pack()
 

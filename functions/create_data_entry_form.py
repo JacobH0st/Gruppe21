@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 from functions.add_data_to_json import add_data_to_json
 #from main_application import MainApplication
@@ -21,8 +22,6 @@ class CreateDataEntryFormBase:
         self.rating_entry = Entry(self.frame)
         self.type_entry = Entry(self.frame)
         self.description_entry = Entry(self.frame)
-                
-        company_entry = Entry(self.frame)
 
         fields = [
             ("Company", 0, self.company_entry),
@@ -50,8 +49,14 @@ class CreateDataEntryFormBase:
             elif field == "Rating":
                 entry_widget.insert(0, "0.0")
                 
-        self.add_button = Button(self.frame, text="Add Data", command=lambda: add_data_to_json(
-            company_entry, 
+        def check_empty_widgets(*widgets):
+            for widget in widgets:
+                if widget.get().strip() == "":
+                    return True
+            return False
+                
+        self.add_button = Button(self.frame, text="Legg til data", command=lambda: add_data_to_json(
+            self.company_entry, 
             self.datetime_entry, 
             self.duration_entry, 
             self.phone_entry, 
@@ -64,7 +69,21 @@ class CreateDataEntryFormBase:
             self.rating_entry, 
             self.type_entry, 
             self.description_entry
-            ))
+            ) if not check_empty_widgets(
+                self.company_entry, 
+                self.datetime_entry, 
+                self.duration_entry, 
+                self.phone_entry, 
+                self.address_entry, 
+                self.price_entry,
+                self.remaining_seats_entry, 
+                self.total_seats_entry, 
+                self.age_limit_entry, 
+                self.outdoor_indoor_entry,
+                self.rating_entry, 
+                self.type_entry, 
+                self.description_entry
+            ) else messagebox.showerror("Feil", "Fyll ut alle feltene"))
         self.add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
 
         self.back_button = Button(self.frame, text="Back", command=lambda: self.app.switch_to_main_frame())

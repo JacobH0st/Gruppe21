@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from functions import MarketplaceBase
 
 class GuideMarketplace(MarketplaceBase):
@@ -11,4 +12,4 @@ class GuideMarketplace(MarketplaceBase):
     def change_existing_guide(self):
         #TODO: gjør det mulig for en guide å endre eksisterende guider
         #TODO: la en guide kunne slette sin egen guide (?), må ha en identifisere til fremtiden, slik at en guide ikke kan slette en annens guide, kun sin egen.
-        pass
+        messagebox.showinfo("Kommer", "Ikke implementert enda")

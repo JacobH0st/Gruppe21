@@ -3,7 +3,7 @@
         "Company": "VISNINGER AS",
         "Date and Time": "31.10.2023 18:00",
         "Duration": "2 timer",
-        "Phone": "+47 47 35 89 01",
+        "Phone": "+47 47358901",
         "Address": "Hvalergata 4A, 1680 Hvaler",
         "Price": "200kr per person",
         "Available Seats": {
@@ -14,7 +14,7 @@
         "Outdoor/Indoor": "Ute",
         "Rating": 3.7,
         "Type": "Naturomvisning",
-        "Description": "Kom \u00e5 se p\u00e5 halloween spesialen ved flotte Hvaler."
+        "Description": "Kom \u00c3\u00a5 se p\u00c3\u00a5 halloween spesialen ved flotte Hvaler."
     },
     {
         "Company": "Hanne Nilsen",
@@ -22,7 +22,7 @@
         "Duration": "1 time",
         "Phone": "+47 69076621",
         "Address": "Fjellveien 2, 6216 Geiranger",
-        "Price": "100kr",
+        "Price": "100kr per person",
         "Available Seats": {
             "Remaining": 5,
             "Total": 15
@@ -31,15 +31,15 @@
         "Outdoor/Indoor": "Ute",
         "Rating": 2.4,
         "Type": "Naturomvisning",
-        "Description": "Kom \u00e5 bli med p\u00e5 en fjelltur, her f\u00e5r du sett masse fin natur"
+        "Description": "Kom \u00c3\u00a5 bli med p\u00c3\u00a5 en fjelltur, her f\u00c3\u00a5r du sett masse fin natur"
     },
     {
         "Company": "Norske Jernbanemuseum",
         "Date and Time": "17.11.2023 12:00",
         "Duration": "1,5 time",
-        "Phone": "+47 40 44 88 80",
+        "Phone": "+47 40448880",
         "Address": "Strandvegen 161, 2316 Hamar",
-        "Price": "200kr for voksne, 100kr for barn",
+        "Price": "200kr per person",
         "Available Seats": {
             "Remaining": 10,
             "Total": 50
@@ -56,7 +56,7 @@
         "Duration": "4 timer",
         "Phone": "+47 97152632",
         "Address": "Gardermovegen 1, 2030 Nannestad",
-        "Price": "500kr",
+        "Price": "500kr per person",
         "Available Seats": {
             "Remaining": 20,
             "Total": 25
@@ -68,54 +68,275 @@
         "Description": "Norges Flyhistorie"
     },
     {
-        "Company": "s",
-        "Date and Time": "s",
-        "Duration": "s",
-        "Phone": "s",
-        "Address": "s",
-        "Price": "s",
+        "Company": "Naturopplevelser AS",
+        "Date and Time": "15.12.2023 14:00",
+        "Duration": "2 timer",
+        "Phone": "+47 12345678",
+        "Address": "Skogveien 5, 1234 Skogbygda",
+        "Price": "150kr per person",
         "Available Seats": {
-            "Remaining": "0",
-            "Total": "0"
+            "Remaining": 20,
+            "Total": 30
         },
-        "Age Limit": "s",
-        "Outdoor/Indoor": "s",
-        "Rating": "0.0",
-        "Type": "s",
-        "Description": "s"
+        "Age Limit": 8,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.5,
+        "Type": "Naturvandring",
+        "Description": "Opplev den vakre skogen og dens dyreliv."
     },
     {
-        "Company": "",
-        "Date and Time": "",
-        "Duration": "",
-        "Phone": "",
-        "Address": "",
-        "Price": "",
+        "Company": "Guidede Kulturhistorie AS",
+        "Date and Time": "08.02.2023 11:30",
+        "Duration": "2,5 timer",
+        "Phone": "+47 98765432",
+        "Address": "Gammelgata 10, 5678 Historiebyen",
+        "Price": "120kr per person",
         "Available Seats": {
-            "Remaining": "0",
-            "Total": "0"
+            "Remaining": 10,
+            "Total": 20
         },
-        "Age Limit": "",
-        "Outdoor/Indoor": "",
-        "Rating": "0.0",
-        "Type": "",
-        "Description": ""
+        "Age Limit": "Ingen aldersgrense",
+        "Outdoor/Indoor": "Begge",
+        "Rating": 4.0,
+        "Type": "Historisk omvisning",
+        "Description": "Utforsk byens rike historie og kulturarv."
     },
     {
-        "Company": "",
-        "Date and Time": "",
-        "Duration": "",
-        "Phone": "",
-        "Address": "",
-        "Price": "",
+        "Company": "Adrenalin eventyr",
+        "Date and Time": "03.07.2023 09:00",
+        "Duration": "3 timer",
+        "Phone": "+47 54359585",
+        "Address": "Ekstremveien 7, 6789 Eventyrland",
+        "Price": "300kr per person",
         "Available Seats": {
-            "Remaining": "0",
-            "Total": "0"
+            "Remaining": 5,
+            "Total": 10
         },
-        "Age Limit": "",
-        "Outdoor/Indoor": "",
-        "Rating": "0.0",
-        "Type": "",
-        "Description": ""
+        "Age Limit": 18,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.8,
+        "Type": "Ekstremsport",
+        "Description": "Er du klar for adrenalinfylte opplevelser?"
+    },
+    {
+        "Company": "FjellEventyr AS",
+        "Date and Time": "20.05.2023 13:30",
+        "Duration": "3 timer",
+        "Phone": "+47 91857366",
+        "Address": "Fjellveien 12, 5678 Fjelltoppby",
+        "Price": "250kr per person",
+        "Available Seats": {
+            "Remaining": 15,
+            "Total": 20
+        },
+        "Age Limit": 12,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.2,
+        "Type": "Fjelltur",
+        "Description": "Utforsk majestetiske fjelltopper og nyt panoramautsikt."
+    },
+    {
+        "Company": "Maritim Opplevelse",
+        "Date and Time": "05.09.2023 10:00",
+        "Duration": "2 timer",
+        "Phone": "+47 69738241",
+        "Address": "Havnegata 5, 1234 Havnebyen",
+        "Price": "180kr per person",
+        "Available Seats": {
+            "Remaining": 8,
+            "Total": 12
+        },
+        "Age Limit": "Ingen aldersgrense",
+        "Outdoor/Indoor": "Begge",
+        "Rating": 4.5,
+        "Type": "Maritime opplevelser",
+        "Description": "Seil langs kysten og oppdag sj\u00c3\u00b8ens skatter."
+    },
+    {
+        "Company": "Kunstvandring AS",
+        "Date and Time": "12.11.2023 15:00",
+        "Duration": "1,5 timer",
+        "Phone": "+47 69584321",
+        "Address": "Kunstgaten 7, 4567 Kunstbyen",
+        "Price": "100kr per person",
+        "Available Seats": {
+            "Remaining": 10,
+            "Total": 15
+        },
+        "Age Limit": "Alle aldre",
+        "Outdoor/Indoor": "Inne",
+        "Rating": 4.7,
+        "Type": "Kunstvandring",
+        "Description": "Utforsk kunstgallerier og oppdag kreativiteten."
+    },
+    {
+        "Company": "SykkelEventyr AS",
+        "Date and Time": "15.07.2023 09:00",
+        "Duration": "4 timer",
+        "Phone": "+47 47526361",
+        "Address": "Sykkelstien 1, 7890 Sykkelby",
+        "Price": "300kr per person",
+        "Available Seats": {
+            "Remaining": 20,
+            "Total": 25
+        },
+        "Age Limit": 16,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.8,
+        "Type": "Sykkeltur",
+        "Description": "Utforsk vakre sykkelruter og opplev naturen p\u00c3\u00a5 to hjul."
+    },
+    {
+        "Company": "HistorieEventyr",
+        "Date and Time": "30.09.2023 14:00",
+        "Duration": "2 timer",
+        "Phone": "+47 94993515",
+        "Address": "Museumsveien 3, 1010 Historieby",
+        "Price": "150kr per person",
+        "Available Seats": {
+            "Remaining": 12,
+            "Total": 15
+        },
+        "Age Limit": "Alle aldre",
+        "Outdoor/Indoor": "Inne",
+        "Rating": 4.6,
+        "Type": "Historievandring",
+        "Description": "Reis tilbake i tid og oppdag historiens hemmeligheter."
+    },
+    {
+        "Company": "Matopplevelser AS",
+        "Date and Time": "08.12.2023 19:30",
+        "Duration": "2,5 timer",
+        "Phone": "+47 98432100",
+        "Address": "Smaksgata 8, 5432 Matbyen",
+        "Price": "220kr per person",
+        "Available Seats": {
+            "Remaining": 18,
+            "Total": 20
+        },
+        "Age Limit": 18,
+        "Outdoor/Indoor": "Inne",
+        "Rating": 4.9,
+        "Type": "Matvandring",
+        "Description": "Pr\u00c3\u00b8v deilige retter og smak lokale delikatesser."
+    },
+    {
+        "Company": "Eventyrland Rundtur",
+        "Date and Time": "02.08.2023 11:00",
+        "Duration": "3 timer",
+        "Phone": "+47 76543210",
+        "Address": "Eventyrveien 8, 3456 Eventyrby",
+        "Price": "250kr per person",
+        "Available Seats": {
+            "Remaining": 10,
+            "Total": 15
+        },
+        "Age Limit": "Ingen aldersgrense",
+        "Outdoor/Indoor": "Begge",
+        "Rating": 4.7,
+        "Type": "Rundtur",
+        "Description": "Utforsk Eventyrland på denne fantastiske rundturen."
+    },
+    {
+        "Company": "Kajakk Opplevelser",
+        "Date and Time": "19.08.2023 13:30",
+        "Duration": "2,5 timer",
+        "Phone": "+47 87654321",
+        "Address": "Kajakkveien 3, 6789 Kajakkbyen",
+        "Price": "180kr per person",
+        "Available Seats": {
+            "Remaining": 15,
+            "Total": 20
+        },
+        "Age Limit": 16,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.5,
+        "Type": "Kajakkpadling",
+        "Description": "Utforsk vakre kajakksteder og nyt naturen på vannet."
+    },
+    {
+        "Company": "Teaterforestilling",
+        "Date and Time": "10.09.2023 19:00",
+        "Duration": "2 timer",
+        "Phone": "+47 47257244",
+        "Address": "Teatergata 7, 5678 Teaterbyen",
+        "Price": "150kr per person",
+        "Available Seats": {
+            "Remaining": 12,
+            "Total": 15
+        },
+        "Age Limit": "Alle aldre",
+        "Outdoor/Indoor": "Inne",
+        "Rating": 4.8,
+        "Type": "Teaterforestilling",
+        "Description": "Opplev en uforglemmelig teaterforestilling."
+    },
+    {
+        "Company": "Reise langs elven",
+        "Date and Time": "15.10.2023 10:30",
+        "Duration": "2,5 timer",
+        "Phone": "+47 67495877",
+        "Address": "Båtveien 5, 5432 Båtbyen",
+        "Price": "200kr per person",
+        "Available Seats": {
+            "Remaining": 18,
+            "Total": 20
+        },
+        "Age Limit": 10,
+        "Outdoor/Indoor": "Begge",
+        "Rating": 4.6,
+        "Type": "Båttur",
+        "Description": "Nyt en avslappende båttur langs elven."
+    },
+    {
+        "Company": "Gårdstur",
+        "Date and Time": "07.11.2023 14:00",
+        "Duration": "2 timer",
+        "Phone": "+47 97290271",
+        "Address": "Gårdsgaten 12, 4567 Gårdstaden",
+        "Price": "120kr per person",
+        "Available Seats": {
+            "Remaining": 8,
+            "Total": 10
+        },
+        "Age Limit": "Ingen aldersgrense",
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.9,
+        "Type": "Gårdstur",
+        "Description": "Besøk en sjarmerende gård og oppdag livet på landet."
+    },
+    {
+        "Company": "Fugletitting",
+        "Date and Time": "22.11.2023 08:00",
+        "Duration": "3 timer",
+        "Phone": "+47 47523244",
+        "Address": "Fugleveien 6, 7890 Fugleby",
+        "Price": "180kr per person",
+        "Available Seats": {
+            "Remaining": 12,
+            "Total": 15
+        },
+        "Age Limit": 12,
+        "Outdoor/Indoor": "Ute",
+        "Rating": 4.7,
+        "Type": "Naturvandring",
+        "Description": "Opplev spennende fuglearter i sitt naturlige miljø."
+    },
+    {
+        "Company": "Museumstur",
+        "Date and Time": "12.12.2023 15:30",
+        "Duration": "2 timer",
+        "Phone": "+47 46732819",
+        "Address": "Museumsgaten 4, 1234 Museumsbyen",
+        "Price": "100kr per person",
+        "Available Seats": {
+            "Remaining": 10,
+            "Total": 12
+        },
+        "Age Limit": "Alle aldre",
+        "Outdoor/Indoor": "Inne",
+        "Rating": 4.5,
+        "Type": "Museumsbesøk",
+        "Description": "Utforsk kule utstillinger på museet."
     }
 ]
