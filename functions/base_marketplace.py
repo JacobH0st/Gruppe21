@@ -3,9 +3,9 @@ import tkinter as tk
 from tkinter import VERTICAL, Listbox, Scrollbar, ttk
 
 class MarketplaceBase:
-    def __init__ (self, app, frame):
+    def __init__ (self, app):
         self.app = app
-        self.frame = frame
+        self.frame = app.marketplace_frame
         self.load_data()
         self.setup_ui()
     

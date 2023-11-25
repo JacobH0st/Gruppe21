@@ -11,7 +11,7 @@ class MainApplication(tk.Tk):
 
         self.main_frame = tk.Frame(self)
         self.data_entry_frame = tk.Frame(self)
-        self.marketeplace_frame = tk.Frame(self)
+        self.marketplace_frame = tk.Frame(self)
 
         self.setup_mode_selection()
         self.main_frame.pack()
@@ -35,14 +35,14 @@ class MainApplication(tk.Tk):
         
     def switch_to_main_frame(self):
         self.data_entry_frame.pack_forget()
-        self.marketeplace_frame.pack_forget()
+        self.marketplace_frame.pack_forget()
         self.geometry("700x500")
         self.main_frame.pack()
         
     def show_marketplace(self, marketplace_class):
         self.main_frame.pack_forget()
         self.geometry("1920x1080")
-        self.current_marketplace = marketplace_class(self, self.marketeplace_frame)
+        self.current_marketplace = marketplace_class(self)
         self.current_marketplace.frame.pack()
         
     def show_data_entry_form(self, create_data_entry_form_class):
