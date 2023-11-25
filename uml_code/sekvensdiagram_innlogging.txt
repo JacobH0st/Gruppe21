@@ -1,0 +1,23 @@
+@startuml
+skinparam actorStyle awesome
+actor Bruker as bruker
+participant System as sys
+database Database as db
+
+bruker -> sys: Prøver å logge inn
+sys -> db: Sjekker om bruker er i systemet
+
+alt Forsøk vellykket
+  db -> sys: Bruker er i database
+  sys -> bruker: Bruker blir logget inn
+
+else Forsøk feilet
+  db --> sys: Bruker er ikke i database
+  sys --> bruker: Bruker blir ikke logget inn og blir bedt om å lage konto.
+  end
+
+bruker -> sys: Lager en bruker
+sys -> db: Lagrer persondataen til databasen
+db -> sys: Bekrefter at data er lagret
+sys -> bruker: Bekrefter at bruker er laget
+@enduml
