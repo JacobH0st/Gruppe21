@@ -1,0 +1,36 @@
+@startuml
+left to right direction 
+skinparam actorStyle awesome
+"Guide" as Guide
+"Kunde" as Kunde
+"Administrator" as Admin
+
+Guide --> (Logge inn)
+Guide --> (Administrere egne turer)
+Guide --> (Browse turer)
+Guide --> (Administrere egen konto)
+
+Kunde --> (Logge inn)
+Kunde --> (Browse turer)
+Kunde --> (Melde seg på turer)
+Kunde --> (Melde seg av turer)
+Kunde --> (Administrere egen konto)
+
+Admin --> (Logge inn)
+Admin --> (Fjerne turer)
+Admin --> (Browse turer)
+Admin --> (Administrere turer)
+Admin --> (Administrere egen konto)
+Admin --> (Administrere andre kontoer)
+
+(Administrere egne turer) --> (Legge til turer)
+(Administrere egne turer) --> (Endre på egne turer)
+(Administrere egne turer) --> (Fjerne egne turer)
+
+(Administrere egen konto) --> (Endre profilbilde)
+(Administrere egen konto) --> (Endre personinfo)
+(Administrere egen konto) --> (Slette konto)
+
+(Administrere andre kontoer)--> (Slette konto)
+(Administrere andre kontoer)--> (Hente ut personinfo)
+@enduml
