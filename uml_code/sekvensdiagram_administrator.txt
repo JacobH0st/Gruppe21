@@ -1,0 +1,29 @@
+@startuml
+skinparam actorStyle awesome
+actor Administrator as admin
+participant System as sys
+database Database as db
+
+admin -> sys: Logger inn
+sys -> admin: Bekrefter at bruker er innlogget
+admin -> sys: Ser på marketplace
+sys -> db: Etterspør ut alle turene
+db -> sys: Gir informasjon om alle turene
+sys -> admin: Viser alle turene på markedplace
+admin -> sys: Admin velger en tur
+sys -> admin: Viser mer informasjon om turen
+
+alt Sletter tur
+
+  admin -> sys: Ber om å slette en tur 
+  sys -> db: Sletter tur
+  db -> admin: Bekrefter at tur er slettet
+  
+
+else Slette bruker
+  admin -> sys: Ber om å en bruker
+  sys -> db: Sletter bruker
+  db -> admin: Bekrefter at bruker er slettet
+  end
+  
+@enduml

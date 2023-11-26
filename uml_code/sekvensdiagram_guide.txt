@@ -1,0 +1,39 @@
+@startuml
+skinparam actorStyle awesome
+actor Guide as guide
+participant System as sys
+database Database as db
+
+guide -> sys: Logger inn
+sys -> guide: Bekrefter at bruker er innlogget
+
+alt Lage tur
+  guide -> sys: Lager en tur
+  sys -> db: Lagrer informasjonen om turen
+  db -> sys: Bekrefter at data er lagret
+  sys -> guide: Bekrefter at tur er laget
+
+else Endre på en tur
+  guide -> sys: Etterspør om å endre på en tur
+  sys -> db: Spør etter informasjonen om turen
+  db -> sys: Gir informasjon turen
+  sys -> guide: Bekrefter at tur kan endres
+  guide -> db: Endrer på informasjon om turen
+  db -> guide: Bekrefter at informasjon om tur er endret
+  end
+
+guide -> sys: Etterspør å slette en tur
+sys -> db: Sjekker om tur er i database
+
+alt successful case
+  db -> sys: Tur er i database
+  sys -> guide: Tur kan bli slettet
+  guide -> db: Sletter tur
+  db -> guide: Bekrefter at tur er slettet
+
+else some kind of failure
+  db --> sys: Tur er ikke i database
+  sys --> guide: Tur kan ikke bli slettet siden den ikke finnes.
+  end
+
+@enduml

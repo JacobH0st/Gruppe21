@@ -1,0 +1,38 @@
+@startuml
+skinparam actorStyle awesome
+actor Kunde as kunde
+participant System as sys
+database Database as db
+participant Betalingstjeneste as bt
+
+kunde -> sys: Logger inn
+sys -> kunde: Bekrefter at bruker er innlogget
+kunde -> sys: Ser på marketplace
+sys -> db: Etterspør ut alle turene
+db -> sys: Gir informasjon om alle turene
+sys -> kunde: Viser alle turene på markedplace
+kunde -> sys: Kunde velger en tur
+sys -> kunde: Viser mer informasjon om turen
+
+alt Påmelding
+
+  kunde -> sys: Melder seg på turen 
+  sys -> kunde: Ber kunde betale
+  kunde -> bt: Betaler for turen
+  bt -> sys: Bekreftelse av betalingen
+  sys -> db: Lagrer kunde og oppdaterer antall påmeldte.
+  db -> sys: Bekrefter at kunde er lagret
+  sys -> kunde: Bekrefter at kunde er påmeldt og betaling er godkjent.
+
+else Avmelding
+  kunde -> sys: Melder seg av turen 
+  sys -> db: Sjekker om kunde er påmeldt
+  db -> sys: Bekrefter at kunde er påmeldt
+  sys -> db: Ber database fjerne kunde og oppdaterer påmeldte
+  db -> sys: Bekrefter at kunde er avmeldt
+  sys -> kunde: Bekrefter at kunde er avmeldt
+  sys -> bt: Etterspør refundasjon for kunde
+  bt -> kunde: Refunderer pengene til kunde
+  end
+
+@enduml
