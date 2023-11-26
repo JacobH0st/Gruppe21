@@ -1,6 +1,6 @@
 import json
 import tkinter as tk
-from tkinter import VERTICAL, Listbox, Scrollbar, ttk
+from tkinter import VERTICAL, Listbox, Scrollbar, ttk, Button
 
 class MarketplaceBase:
     def __init__ (self, app):
@@ -35,8 +35,8 @@ class MarketplaceBase:
         
         self.setup_scrollbars()
         
-        back_button = tk.Button(self.frame, text="Tilbake", command=self.app.switch_to_main_frame)
-        back_button.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
+        self.back_button = Button(self.frame, text="Tilbake", command=self.app.switch_to_main_frame)
+        self.back_button.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
         
     def populate_treeview(self):
         tours = []
@@ -62,13 +62,13 @@ class MarketplaceBase:
             self.tree.insert('', tk.END, values=tour)
             
     def setup_scrollbars(self):
-        scrollbar_treeview = Scrollbar(self.frame, orient=VERTICAL, command=self.tree.yview)
-        self.tree.configure(yscroll=scrollbar_treeview.set)
-        scrollbar_treeview.grid(row=0, column=1, sticky='ns')
+        self.scrollbar_treeview = Scrollbar(self.frame, orient=VERTICAL, command=self.tree.yview)
+        self.tree.configure(yscroll=self.scrollbar_treeview.set)
+        self.scrollbar_treeview.grid(row=0, column=1, sticky='ns')
 
-        scrollbar_listbox = Scrollbar(self.frame, orient=VERTICAL, command=self.listbox.yview)
-        self.listbox.config(yscroll=scrollbar_listbox.set)
-        scrollbar_listbox.grid(row=0, column=4, sticky='ns')
+        self.scrollbar_listbox = Scrollbar(self.frame, orient=VERTICAL, command=self.listbox.yview)
+        self.listbox.config(yscroll=self.scrollbar_listbox.set)
+        self.scrollbar_listbox.grid(row=0, column=4, sticky='ns')
     
     def item_selected(self, event):
         for selected_item in self.tree.selection():

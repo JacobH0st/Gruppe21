@@ -1,28 +1,46 @@
-from tkinter import Tk, ttk
-import pytest
 
-from functions import MarketplaceBase
+
+from tkinter import Button, Frame, Listbox, Scrollbar, Tk
+from tkinter.ttk import Treeview
+
+import pytest
+from functions.base_marketplace import MarketplaceBase
 from main_application import MainApplication
 
 
 @pytest.fixture
-def app():
-    root = Tk()
-    yield root
-    root.destroy()
+def app_and_frame():
+    app = MainApplication()
+    frame = app.marketplace_frame
+    yield app, frame
+    app.destroy()
+    
+#Testing to see if the treeview widget is created
+def test_is_base_marketplace_treeview_widget_created(app_and_frame):
+    app, frame = app_and_frame
+    marketplace_base = MarketplaceBase(app)
+    assert isinstance(marketplace_base.tree, Treeview)
 
-@pytest.fixture
+#Testing to see if the listbox widget is created
+def test_is_base_marketplace_listbox_widget_created(app_and_frame):
+    app, frame = app_and_frame
+    marketplace_base = MarketplaceBase(app)
+    assert isinstance(marketplace_base.listbox, Listbox)
 
-def main_app(app):
-    return MainApplication()
-@pytest.fixture
-def marketplace_app(main_app):
-    return MarketplaceBase(main_app)
-
-#Testing the load data method
-def test_load_data(marketplace_app):
-    marketplace_app.load_data()
-    assert isinstance(marketplace_app.tours_data, list)
-
-
-
+#Testing to see if the back button widget is created
+def test_is_base_marketplace_back_button_widget_created(app_and_frame):
+    app, frame = app_and_frame
+    marketplace_base = MarketplaceBase(app)
+    assert isinstance(marketplace_base.back_button, Button)
+    
+#Testing to see if the listbox treeview widget is created 
+def test_is_base_marketplace_listbox_scrollbar_widget_created(app_and_frame):
+    app, frame = app_and_frame
+    marketplace_base = MarketplaceBase(app)
+    assert isinstance(marketplace_base.scrollbar_listbox, Scrollbar)
+ 
+#Testing to see if the treeview scrollbar widget is created   
+def test_is_base_marketplace_treeview_scrollbar_widget_created(app_and_frame):
+    app, frame = app_and_frame
+    marketplace_base = MarketplaceBase(app)
+    assert isinstance(marketplace_base.scrollbar_treeview, Scrollbar)
