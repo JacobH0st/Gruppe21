@@ -5,7 +5,6 @@ import pytest
 
 from main_application import MainApplication
 
-
 @pytest.fixture
 def app_and_frame():
     app = MainApplication()

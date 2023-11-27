@@ -1,10 +1,10 @@
 
 
-from tkinter import Button, Frame, Listbox, Scrollbar, Tk
+from tkinter import Button, Listbox, Scrollbar
 from tkinter.ttk import Treeview
 
 import pytest
-from functions.base_marketplace import MarketplaceBase
+from functions import MarketplaceBase
 from main_application import MainApplication
 
 

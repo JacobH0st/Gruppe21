@@ -7,13 +7,14 @@ class AdminMarketplace(MarketplaceBase):
     def setup_ui(self):
         super().setup_ui()
         
-        delete_button = tk.Button(self.frame, text="Slett", command=self.delete_existing_guide)
-        delete_button.grid(row=1, column=2, columnspan=1, padx=10, pady=10)
+        self.delete_button = tk.Button(self.frame, text="Slett", command=self.delete_existing_guide)
+        self.delete_button.grid(row=1, column=2, columnspan=1, padx=10, pady=10)
     
     def delete_existing_guide(self):
         selected_item = self.tree.selection()
         
         if not selected_item:
+            messagebox.showinfo("Melding", "Vennligst velg en guide å slette.")
             return
         
         confirmation = messagebox.askokcancel("Bekreft sletting", "Er du sikker på at du vil slette valgt guide?")

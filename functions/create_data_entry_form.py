@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 
 from functions.add_data_to_json import add_data_to_json
-#from main_application import MainApplication
 
 class CreateDataEntryFormBase:
     def __init__(self, app, frame):
@@ -86,7 +85,5 @@ class CreateDataEntryFormBase:
             ) else messagebox.showerror("Feil", "Fyll ut alle feltene"))
         self.add_button.grid(row=13, column=0, columnspan=2, padx=10, pady=10)
 
-        self.back_button = Button(self.frame, text="Back", command=lambda: self.app.switch_to_main_frame())
+        self.back_button = Button(self.frame, text="Tilbake", command=lambda: self.app.switch_to_main_frame())
         self.back_button.grid(row=15, column=0, columnspan=2, padx=10, pady=10)
-
-        
