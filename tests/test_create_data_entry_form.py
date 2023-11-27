@@ -109,7 +109,7 @@ def test_is_create_data_entry_form_rating_entry_widget_default_value(create_data
 
 #Testing to see if the back button contains the right text
 def test_is_create_data_entry_form_name_back_button_correct(create_data_entry_form):
-    assert create_data_entry_form.back_button.cget("text") == "Back"
+    assert create_data_entry_form.back_button.cget("text") == "Tilbake"
 
 #Testing to see if the add data button contains the right text
 def test_is_create_data_entry_form_name_add_button_correct(create_data_entry_form):
