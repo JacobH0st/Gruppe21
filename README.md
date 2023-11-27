@@ -8,7 +8,9 @@ Admin brukertypen kan også browse markedplassen. Admin brukeren har også mulig
 
 Selve applikasjonen er ganske simpel med et par knapper. Det er en tilbake knapp på hver side så man kan gå tilbake for å bytte brukertype. Selve markedplassen har en liste på venstre siden og når man trykker på en tur så for man opp informasjonen om den i et vindu på høre siden av applikasjonen.
 
-Hvis man har lyst til å kjøre tester så gjør man det ved å kjøre denne kommandoen "python -m pytest" i terminalen til din IDE. I f.eks PyCharm kan man finne dette helt på bunnen av programmet. 
+Hvis man har lyst til å kjøre tester så gjør man det ved å kjøre denne kommandoen "python -m pytest" i terminalen til din IDE. I f.eks PyCharm kan man finne dette helt på bunnen av programmet. Her er et bilde på hvordan man kan gjøre det i PyCharm:
+
+![Hvordan starte testene](https://github.com/JacobH0st/Gruppe21/tree/BLDZ-patch-1/bilder/how_to_start_test.png?raw=true)
 
 ## Om prototypen
 (Dette er kopiert rett ifra prosjektbeskrivelsen)
