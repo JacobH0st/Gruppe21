@@ -2,22 +2,25 @@ import json
 import tkinter as tk
 from tkinter import VERTICAL, Listbox, Scrollbar, ttk, Button
 
+
 class MarketplaceBase:
-    def __init__ (self, app):
+    def __init__(self, app):
         self.app = app
         self.frame = app.marketplace_frame
         self.load_data()
         self.setup_ui()
-    
+
     def load_data(self):
         with open('json_files/data.json', 'r') as f:
             self.tours_data = json.load(f)
-    
+
     def setup_ui(self):
         for widget in self.frame.grid_slaves():
             widget.grid_forget()
-        
-        columns = ('ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted', 'Rating', 'Type')
+
+        columns = (
+        'ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted',
+        'Rating', 'Type')
         self.tree = ttk.Treeview(self.frame, columns=columns, show='headings')
 
         for column in columns:
@@ -26,18 +29,19 @@ class MarketplaceBase:
 
         self.populate_treeview()
 
-        self.listbox = Listbox(self.frame, height=15, width=55, bg="white", activestyle='dotbox', font="Helvetica", fg="black")
+        self.listbox = Listbox(self.frame, height=15, width=55, bg="white", activestyle='dotbox', font="Helvetica",
+                               fg="black")
         self.listbox.grid(row=0, column=2)
 
         self.tree.bind('<<TreeviewSelect>>', self.item_selected)
-        
+
         self.tree.grid(row=0, column=0, sticky='nsew')
-        
+
         self.setup_scrollbars()
-        
+
         self.back_button = Button(self.frame, text="Tilbake", command=self.app.switch_to_main_frame)
         self.back_button.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
-        
+
     def populate_treeview(self):
         tours = []
         for i, tour_data in enumerate(self.tours_data, start=1):
@@ -55,12 +59,13 @@ class MarketplaceBase:
             rating = tour_data['Rating']
             category = tour_data['Type']
             description = tour_data['Description']
-            
-            tours.append((id, company, date, duration, phone, address, price, f"{remaining_seats}/{total_seats}", age_limit, place, rating, category, description))
-        
+
+            tours.append((id, company, date, duration, phone, address, price, f"{remaining_seats}/{total_seats}",
+                          age_limit, place, rating, category, description))
+
         for tour in tours:
             self.tree.insert('', tk.END, values=tour)
-            
+
     def setup_scrollbars(self):
         self.scrollbar_treeview = Scrollbar(self.frame, orient=VERTICAL, command=self.tree.yview)
         self.tree.configure(yscroll=self.scrollbar_treeview.set)
@@ -69,7 +74,7 @@ class MarketplaceBase:
         self.scrollbar_listbox = Scrollbar(self.frame, orient=VERTICAL, command=self.listbox.yview)
         self.listbox.config(yscroll=self.scrollbar_listbox.set)
         self.scrollbar_listbox.grid(row=0, column=4, sticky='ns')
-    
+
     def item_selected(self, event):
         for selected_item in self.tree.selection():
             self.listbox.delete(0, tk.END)
