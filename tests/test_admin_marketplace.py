@@ -15,31 +15,31 @@ def app_and_frame():
 #Testing the base widget
 
 #Testing to see if the treeview widget is created
-def test_is_guide_marketplace_treeview_widget_created(app_and_frame):
+def test_is_admin_marketplace_treeview_widget_created(app_and_frame):
     app, frame = app_and_frame
     admin_marketplace = AdminMarketplace(app)
     assert isinstance(admin_marketplace.tree, Treeview)
 
 #Testing to see if the listbox widget is created
-def test_is_guide_marketplace_listbox_widget_created(app_and_frame):
+def test_is_admin_marketplace_listbox_widget_created(app_and_frame):
     app, frame = app_and_frame
     admin_marketplace = AdminMarketplace(app)
     assert isinstance(admin_marketplace.listbox, Listbox)
 
 #Testing to see if the back button widget is created
-def test_is_guide_marketplace_back_button_widget_created(app_and_frame):
+def test_is_admin_marketplace_back_button_widget_created(app_and_frame):
     app, frame = app_and_frame
     admin_marketplace = AdminMarketplace(app)
     assert isinstance(admin_marketplace.back_button, Button)
     
 #Testing to see if the listbox treeview widget is created 
-def test_is_guide_marketplace_listbox_scrollbar_widget_created(app_and_frame):
+def test_is_admin_marketplace_listbox_scrollbar_widget_created(app_and_frame):
     app, frame = app_and_frame
     admin_marketplace = AdminMarketplace(app)
     assert isinstance(admin_marketplace.scrollbar_listbox, Scrollbar)
  
 #Testing to see if the treeview scrollbar widget is created   
-def test_is_guide_marketplace_treeview_scrollbar_widget_created(app_and_frame):
+def test_is_admin_marketplace_treeview_scrollbar_widget_created(app_and_frame):
     app, frame = app_and_frame
     admin_marketplace = AdminMarketplace(app)
     assert isinstance(admin_marketplace.scrollbar_treeview, Scrollbar)   
