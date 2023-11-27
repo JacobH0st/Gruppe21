@@ -6,8 +6,8 @@ class GuideMarketplace(MarketplaceBase):
     def setup_ui(self):
         super().setup_ui()
         
-        edit_button = tk.Button(self.frame, text="Endre", command=self.change_existing_guide)
-        edit_button.grid(row=1, column=2, columnspan=1, padx=10, pady=10)
+        self.edit_button = tk.Button(self.frame, text="Endre", command=self.change_existing_guide)
+        self.edit_button.grid(row=1, column=2, columnspan=1, padx=10, pady=10)
     
     def change_existing_guide(self):
         #TODO: gjør det mulig for en guide å endre eksisterende guider

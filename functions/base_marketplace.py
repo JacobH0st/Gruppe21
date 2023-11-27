@@ -17,10 +17,10 @@ class MarketplaceBase:
         for widget in self.frame.grid_slaves():
             widget.grid_forget()
         
-        columns = ('ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted', 'Rating', 'Type')
-        self.tree = ttk.Treeview(self.frame, columns=columns, show='headings')
+        self.columns = ('ID', 'Hvem', 'Tidspunkt', 'Varighet', 'Tlf nr', 'Addresse', 'Pris', 'Ledige seter', 'Aldersgrense', 'Sted', 'Rating', 'Type')
+        self.tree = ttk.Treeview(self.frame, columns=self.columns, show='headings')
 
-        for column in columns:
+        for column in self.columns:
             self.tree.heading(column, text=column)
             self.tree.column(column, width=115)
 
