@@ -14,7 +14,7 @@ jobs:
       run : pip install pytest
 
     - name : Install TkInter
-      run : pip install tkinter
+      run : pip install tk
 
     - name : Pytest
       run : pytest tests/test_base_marketplace.py
