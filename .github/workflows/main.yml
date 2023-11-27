@@ -14,4 +14,13 @@ jobs:
       run : pip install pytest
 
     - name : Pytest
-      run : pytest tests
+      run : pytest tests/test_base_marketplace.py
+      
+    - name : Pytest
+      run : pytest tests/test_create_data_entry_form.py
+
+    - name : Pytest
+      run : pytest tests/test_mainapplication.py
+
+    - name : Pytest
+      run : pytest tests/test_mainapplication.py
