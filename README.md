@@ -1,6 +1,6 @@
 # Gruppe21
 ## Hvordan bruke prototypen
-For å kjøre prototypen må du laste ned repositaryet og kjøpre main_application.py filen. Da vil applikasjonen åpne seg. Se bilde under:
+For å kjøre prototypen må du laste ned repositaryet og kjøre main_application.py filen. Da vil applikasjonen åpne seg. Se bilde under:
 
 ![Hvordan starte applikajsonen](bilder/how_to_start_app.png)
 
