@@ -14,7 +14,7 @@ Selve applikasjonen er ganske simpel med et par knapper. Det er en tilbake knapp
 
 Hvis man har lyst til å kjøre tester så gjør man det ved å kjøre denne kommandoen "python -m pytest" i terminalen til din IDE. I f.eks PyCharm kan man finne dette helt på bunnen av programmet. Her er et bilde på hvordan man kan gjøre det i PyCharm:
 
-![Hvordan starte testene](bilder/how_to_start_test.png)
+![Hvordan starte testene](bilder/how_to_start_the_tests.png)
 
 ## Om prototypen
 (Dette er kopiert rett ifra prosjektbeskrivelsen)
