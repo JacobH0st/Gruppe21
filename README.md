@@ -16,6 +16,9 @@ Hvis man har lyst til å kjøre tester så gjør man det ved å kjøre denne kom
 
 ![Hvordan starte testene](bilder/how_to_start_the_tests.png)
 
+![Tester har passert](bilder/tests_passed.png)
+
+
 ## Om prototypen
 (Dette er kopiert rett ifra prosjektbeskrivelsen)
 
