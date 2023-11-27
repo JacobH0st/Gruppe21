@@ -1,6 +1,6 @@
 import tkinter as tk
 import pytest
-from ui_components.base_layout import BaseLayout  # Assuming this is the file structure
+from ui_components.base_layout import BaseLayout
 
 @pytest.fixture
 def base_layout():
