@@ -1,6 +1,10 @@
 # Gruppe21
 ## Hvordan bruke prototypen
-For å kjøre prototypen må du laste ned repositaryet og kjøpre main_application.py filen. Da vil applikasjonen åpne seg. Man kan da velge hvilken type bruker som man skal bruke applikasjonen som. Det er tre ulike typer. "User" er det som vi i prosjektbeskrivelsen kaller kunde. I vår prototype så kan kunden browse markedplassen. Kunden skal også kunne melde seg på en tur, men denne funksjonalitener er ikke implementer i vår prototype så "bestill" knappen gjør ikke stort.
+For å kjøre prototypen må du laste ned repositaryet og kjøpre main_application.py filen. Da vil applikasjonen åpne seg. Se bilde under:
+
+![Hvordan starte applikajsonen](bilder/how_to_start_app.png)
+
+Man kan da velge hvilken type bruker som man skal bruke applikasjonen som. Det er tre ulike typer. "User" er det som vi i prosjektbeskrivelsen kaller kunde. I vår prototype så kan kunden browse markedplassen. Kunden skal også kunne melde seg på en tur, men denne funksjonalitener er ikke implementer i vår prototype så "bestill" knappen gjør ikke stort.
 
 Guide brukertypen kan også se på markedsplassen og skal kunne legge ut en ny tur. Denne funksjonaliteten har vi implementer i prototypen. En annen funksjonalitet som hadde planer om å implentere som vi ikke har med i prototypen er det å kunne redigere på en tur. Vi har knapp for å kunne gjøre det men den knappen har ikke funksjonalitet. 
 
@@ -10,7 +14,7 @@ Selve applikasjonen er ganske simpel med et par knapper. Det er en tilbake knapp
 
 Hvis man har lyst til å kjøre tester så gjør man det ved å kjøre denne kommandoen "python -m pytest" i terminalen til din IDE. I f.eks PyCharm kan man finne dette helt på bunnen av programmet. Her er et bilde på hvordan man kan gjøre det i PyCharm:
 
-![Hvordan starte testene](https://github.com/JacobH0st/Gruppe21/tree/BLDZ-patch-1/bilder/how_to_start_test.png?raw=true)
+![Hvordan starte testene](bilder/how_to_start_test.png)
 
 ## Om prototypen
 (Dette er kopiert rett ifra prosjektbeskrivelsen)
