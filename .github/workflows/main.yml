@@ -1,0 +1,17 @@
+name: Test on push event
+
+on: push
+
+jobs:
+  unit-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name : Checkout code
+      uses : actions/checkout@v2
+
+    - name : Innstall Packages
+      run : pip install pytest
+
+    - name : Pytest
+      run : pytest tests
